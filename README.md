@@ -240,7 +240,7 @@ The franchise application form uses **CSC API** to provide real-time, dynamic lo
 | ⚡ Fast Performance  | Sub-100ms response time with automatic caching         |
 | 🎯 151,000+ Cities   | Access to every city in India, not just a static list  |
 
-# How It Works
+#### How It Works
 
 1. User selects a **state** from the dropdown
 2. API fetches all cities in that state dynamically
@@ -282,10 +282,10 @@ Advanced analytics dashboard
 Chat support system
 Multi-language support
 
-### 👨‍💻 Author
+# 👨‍💻 Author
 
-# Sumitraj Sadafule
-# GitHub: @SumitrajSadafule
+## Sumitraj Sadafule
+## GitHub: @SumitrajSadafule
 
 ## ⭐ Show Your Support
 
@@ -294,12 +294,3 @@ If you find this project helpful, please give it a ⭐ on GitHub!
 Built with ❤️ for MAC's Franchise
 
 ---
-
-## 📤 One Command to Push to GitHub:
-
-After pasting into `README.md`, run these two commands:
-
-```bash
-git add README.md
-git commit -m "docs: add professional README"
-git push
