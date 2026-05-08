@@ -282,6 +282,14 @@ Advanced analytics dashboard
 Chat support system
 Multi-language support
 
+## ⚠️ Deployment Status
+
+- ✅ **Frontend (Vercel):** Live – [View Demo](https://franchicore.vercel.app)
+- ⏳ **Backend:** Code on GitHub, not deployed yet (requires MySQL database)
+- 🗺️ **Google Maps and API integration (CSC API):** Requires backend for location data – see GitHub for full implementation
+
+> *The frontend demonstrates UI/UX, responsive design and animations. The complete full-stack application runs locally – see installation instructions above.*
+
 # 👨‍💻 Author
 
 ## Sumitraj Sadafule
