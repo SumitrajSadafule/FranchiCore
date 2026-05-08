@@ -135,6 +135,13 @@
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 
+<!-- PostgreSQL Driver -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>runtime</scope>
+</dependency>
+
 
 	</dependencies>
 
