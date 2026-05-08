@@ -1,0 +1,251 @@
+/* ======================================================
+   MAC's Franchise Portal - App Root Styles
+   Import all CSS files and define root-level styles
+====================================================== */
+
+/* Import all CSS files in order */
+@import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/animations.css';
+@import './styles/responsive.css';
+@import './styles/themes/light-theme.css';
+@import './styles/themes/dark-theme.css';
+
+/* ===== APP ROOT STYLES ===== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== APP CONTAINER ===== */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.app__main {
+  flex: 1;
+  width: 100%;
+}
+
+/* ===== PAGE TRANSITIONS ===== */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+/* ===== LOADING STATES ===== */
+.app__loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+}
+
+.app__loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ===== ERROR STATES ===== */
+.app__error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+
+.app__error-title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-error);
+  margin-bottom: var(--spacing-md);
+}
+
+.app__error-message {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+}
+
+.app__error-button {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.app__error-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===== SCROLL TO TOP BUTTON ===== */
+.app__scroll-top {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-fast);
+  z-index: var(--z-fixed);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.app__scroll-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.app__scroll-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== TOAST NOTIFICATION CONTAINER ===== */
+.app__toast-container {
+  position: fixed;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* ===== MODAL CONTAINER ===== */
+.app__modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  pointer-events: none;
+}
+
+.app__modal-container > * {
+  pointer-events: auto;
+}
+
+/* ===== THEME TOGGLE BUTTON (if placed in root) ===== */
+.app__theme-toggle {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  left: var(--spacing-xl);
+  width: 50px;
+  height: 50px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  z-index: var(--z-fixed);
+}
+
+.app__theme-toggle:hover {
+  transform: rotate(30deg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .app__scroll-top {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+  }
+
+  .app__theme-toggle {
+    bottom: var(--spacing-lg);
+    left: var(--spacing-lg);
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+  }
+
+  .app__toast-container {
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    left: var(--spacing-lg);
+    max-width: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .app__scroll-top,
+  .app__theme-toggle,
+  .app__toast-container {
+    display: none !important;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .app__scroll-top,
+  .app__theme-toggle,
+  .page-enter-active,
+  .page-exit-active {
+    transition: none !important;
+  }
+}

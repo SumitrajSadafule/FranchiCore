@@ -1,14 +1,57 @@
+# ===== FRONTEND IGNORES =====
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files (contains API keys!)
+.env
+.env.local
+.env.*.local
+
+# ===== BACKEND IGNORES =====
 # CRITICAL SECURITY - Database and Email credentials
 application.properties
 *.properties
 
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
 
-### STS ###
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Gradle
+.gradle/
+build/
+
+# IDE
 .apt_generated
 .classpath
 .factorypath
@@ -16,22 +59,23 @@ target/
 .settings
 .springBeans
 .sts4-cache
-
-### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
+
+# Help files
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+
+# Test folders
+!**/src/main/**/target/
+!**/src/test/**/target/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
