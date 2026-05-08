@@ -1,0 +1,574 @@
+/* ======================================================
+   MAC's Franchise Portal - Animations
+   Keyframe animations (MANDATORY as per requirements)
+   Smooth transitions and engaging user experience
+====================================================== */
+
+/* ===== FADE ANIMATIONS ===== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== SLIDE ANIMATIONS ===== */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ===== SCALE ANIMATIONS ===== */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== ROTATE ANIMATIONS ===== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== SHAKE ANIMATION ===== */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* ===== MENU/FOOD SPECIFIC ANIMATIONS ===== */
+@keyframes burgerFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes friesBounce {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes drinkWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+/* ===== NOTIFICATION/BADGE ANIMATIONS ===== */
+@keyframes notificationPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(214, 35, 35, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(214, 35, 35, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(214, 35, 35, 0);
+  }
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+@keyframes loadingDots {
+  0% {
+    content: '';
+  }
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
+  }
+  100% {
+    content: '';
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ===== PAGE TRANSITIONS ===== */
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* ===== MODAL ANIMATIONS ===== */
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Fade animations */
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal);
+}
+
+.animate-fade-out {
+  animation: fadeOut var(--transition-normal);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--transition-normal);
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--transition-normal);
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft var(--transition-normal);
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight var(--transition-normal);
+}
+
+/* Slide animations */
+.animate-slide-in-up {
+  animation: slideInUp var(--transition-normal);
+}
+
+.animate-slide-in-down {
+  animation: slideInDown var(--transition-normal);
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft var(--transition-normal);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--transition-normal);
+}
+
+/* Scale animations */
+.animate-scale-in {
+  animation: scaleIn var(--transition-normal);
+}
+
+.animate-scale-out {
+  animation: scaleOut var(--transition-normal);
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Rotate animations */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* Special animations */
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-burger-float {
+  animation: burgerFloat 3s ease-in-out infinite;
+}
+
+.animate-fries-bounce {
+  animation: friesBounce 2s ease-in-out infinite;
+}
+
+.animate-drink-wiggle {
+  animation: drinkWiggle 2s ease-in-out infinite;
+}
+
+.animate-notification-pulse {
+  animation: notificationPulse 2s infinite;
+}
+
+/* Loading animations */
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Page transition animations */
+.animate-page-enter {
+  animation: pageEnter var(--transition-normal);
+}
+
+.animate-page-exit {
+  animation: pageExit var(--transition-normal);
+}
+
+/* Modal animations */
+.animate-modal-enter {
+  animation: modalEnter var(--transition-normal);
+}
+
+.animate-modal-exit {
+  animation: modalExit var(--transition-normal);
+}
+
+/* ===== DELAY CLASSES ===== */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* ===== DURATION CLASSES ===== */
+.duration-fast {
+  animation-duration: var(--transition-fast);
+}
+
+.duration-normal {
+  animation-duration: var(--transition-normal);
+}
+
+.duration-slow {
+  animation-duration: var(--transition-slow);
+}
+
+/* ===== ITERATION COUNT ===== */
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+.once {
+  animation-iteration-count: 1;
+}
+
+.twice {
+  animation-iteration-count: 2;
+}
+
+/* ===== TIMING FUNCTIONS ===== */
+.ease-linear {
+  animation-timing-function: linear;
+}
+
+.ease-in {
+  animation-timing-function: ease-in;
+}
+
+.ease-out {
+  animation-timing-function: ease-out;
+}
+
+.ease-in-out {
+  animation-timing-function: ease-in-out;
+}
+
+/* ===== FILL MODES ===== */
+.forwards {
+  animation-fill-mode: forwards;
+}
+
+.backwards {
+  animation-fill-mode: backwards;
+}
+
+.both {
+  animation-fill-mode: both;
+}
+
+/* ===== HOVER ANIMATIONS ===== */
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform var(--transition-fast);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  transition: transform var(--transition-fast);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow var(--transition-fast);
+}
+
+.hover-rotate:hover {
+  transform: rotate(5deg);
+  transition: transform var(--transition-fast);
+}
+
+/* ===== MENU ITEM HOVER EFFECTS ===== */
+.menu-item-hover {
+  transition: all var(--transition-normal);
+}
+
+.menu-item-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-item-hover:hover .item-image {
+  animation: pulse 1s infinite;
+}
+
+/* ===== CARD ENTRANCE ANIMATIONS ===== */
+.card-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--transition-normal) forwards;
+}
+
+.card-enter:nth-child(1) { animation-delay: 100ms; }
+.card-enter:nth-child(2) { animation-delay: 200ms; }
+.card-enter:nth-child(3) { animation-delay: 300ms; }
+.card-enter:nth-child(4) { animation-delay: 400ms; }
+.card-enter:nth-child(5) { animation-delay: 500ms; }
+.card-enter:nth-child(6) { animation-delay: 600ms; }
+
+/* ===== NOTIFICATION ENTRANCE ===== */
+.notification-enter {
+  animation: slideInRight var(--transition-normal) forwards;
+}
+
+.notification-exit {
+  animation: slideOutRight var(--transition-normal) forwards;
+}
+
+/* ===== DROPDOWN ANIMATIONS ===== */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInDown var(--transition-fast) forwards;
+}
+
+.dropdown-exit {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeOutUp var(--transition-fast) forwards;
+}

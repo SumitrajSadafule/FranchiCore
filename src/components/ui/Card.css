@@ -1,0 +1,213 @@
+/* ======================================================
+   Card Component Styles
+   Reusable card with variants, padding options, and hover effects
+   BEM naming convention
+====================================================== */
+
+.card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== VARIANTS ===== */
+
+.card--default {
+  background-color: var(--bg-primary);
+}
+
+.card--elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.card--elevated:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card--outlined {
+  border: 1px solid var(--border-light);
+}
+
+.card--flat {
+  background-color: var(--bg-secondary);
+}
+
+/* ===== BORDERED ===== */
+
+.card--bordered {
+  border: 1px solid var(--border-light);
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+.card--hoverable {
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card--hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== CLICKABLE ===== */
+
+.card--clickable {
+  cursor: pointer;
+}
+
+.card--clickable:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.card--clickable:active {
+  transform: scale(0.98);
+}
+
+/* ===== PADDING VARIANTS ===== */
+
+.card--padding-none {
+  padding: 0;
+}
+
+.card--padding-sm {
+  padding: var(--spacing-sm);
+}
+
+.card--padding-md {
+  padding: var(--spacing-md);
+}
+
+.card--padding-lg {
+  padding: var(--spacing-lg);
+}
+
+.card--padding-xl {
+  padding: var(--spacing-xl);
+}
+
+/* ===== CARD SECTIONS ===== */
+
+.card__header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+  background-color: var(--bg-tertiary);
+}
+
+.card__body {
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.card__footer {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+  background-color: var(--bg-tertiary);
+}
+
+/* ===== CARD TYPOGRAPHY ===== */
+
+.card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.card__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ===== CARD IMAGE ===== */
+
+.card__image {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.card__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.card--hoverable:hover .card__image img {
+  transform: scale(1.05);
+}
+
+.card__image--top {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card__image--bottom {
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.card__image--middle {
+  border-radius: 0;
+}
+
+/* ===== DARK THEME ADJUSTMENTS ===== */
+
+[data-theme="dark"] .card--default {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .card--flat {
+  background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .card__header,
+[data-theme="dark"] .card__footer {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-medium);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--spacing-md);
+  }
+  
+  .card__title {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card__image img,
+  .card--hoverable,
+  .card--clickable {
+    transition: none;
+    transform: none;
+  }
+  
+  .card--hoverable:hover {
+    transform: none;
+  }
+  
+  .card--hoverable:hover .card__image img {
+    transform: none;
+  }
+}
