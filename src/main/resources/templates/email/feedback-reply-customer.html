@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reply to Your Feedback - MAC's Franchise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #D62323 0%, #B01C1C 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        .original-feedback {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #FFC72C;
+        }
+        .reply-box {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #D62323;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 Response to Your Feedback</h1>
+        </div>
+        <div class="content">
+            <p>Dear <strong th:text="${customerName}">Customer</strong>,</p>
+            
+            <p>Thank you for your feedback regarding your experience at <strong>MAC's Franchise</strong>.</p>
+            
+            <div class="original-feedback">
+                <p><strong>📝 Your Original Feedback:</strong></p>
+                <p th:text="${originalComments}">Original comments here</p>
+                <p><strong>⭐ Rating:</strong> <span th:text="${rating}">4 Stars</span></p>
+            </div>
+            
+            <div class="reply-box">
+                <p><strong>💬 Reply from <span th:text="${repliedBy}">Owner/Admin</span>:</strong></p>
+                <p th:text="${replyText}">Reply message here</p>
+                <p style="font-size: 12px; color: #888; margin-top: 10px;">
+                    Replied on: <span th:text="${repliedDate}">Date</span>
+                </p>
+            </div>
+            
+            <p>We appreciate you taking the time to share your experience with us.</p>
+            
+            <p>If you have any further questions or concerns, please don't hesitate to reach out to us at <strong>support@macs.com</strong>.</p>
+            
+            <hr>
+            
+            <p>Best regards,<br>
+            <strong>MAC's Franchise Team</strong></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 MAC's Franchise. All rights reserved.</p>
+            <p>This is an automated message, please do not reply.</p>
+        </div>
+    </div>
+</body>
+</html>

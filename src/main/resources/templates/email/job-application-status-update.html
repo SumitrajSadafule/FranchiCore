@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Status Update - MAC's Careers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #D62323 0%, #B01C1C 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        .status-box {
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .status-accepted {
+            background-color: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+        }
+        .status-rejected {
+            background-color: #f8d7da;
+            border: 1px solid #dc3545;
+            color: #721c24;
+        }
+        .status-review {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+        }
+        .status-interview {
+            background-color: #d1ecf1;
+            border: 1px solid #17a2b8;
+            color: #0c5460;
+        }
+        .old-status {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .new-status {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #D62323 0%, #B01C1C 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📢 Job Application Status Update</h1>
+        </div>
+        <div class="content">
+            <p>Dear <strong th:text="${name}">Applicant</strong>,</p>
+            
+            <p>There has been an update to your job application for the position of <strong th:text="${jobTitle}">Job Title</strong>.</p>
+            
+            <div class="status-box" th:classappend="${newStatus == 'ACCEPTED' ? 'status-accepted' : (newStatus == 'REJECTED' ? 'status-rejected' : (newStatus == 'INTERVIEW_SCHEDULED' ? 'status-interview' : 'status-review'))}">
+                <p style="margin: 0;">Status Changed From:</p>
+                <p class="old-status" th:text="${oldStatus}">Old Status</p>
+                <p style="margin: 10px 0 0 0;">Status Changed To:</p>
+                <p class="new-status" th:text="${newStatus}">New Status</p>
+            </div>
+            
+            <div th:switch="${newStatus}">
+                <div th:case="'INTERVIEW_SCHEDULED'">
+                    <p>📅 <strong>Congratulations!</strong> You have been shortlisted for an interview.</p>
+                    <p>Our recruitment team will contact you shortly with the interview schedule details.</p>
+                </div>
+                
+                <div th:case="'ACCEPTED'">
+                    <p>🎉 <strong>Congratulations!</strong> We are pleased to inform you that your application has been accepted!</p>
+                    <p>Our HR team will contact you with the offer letter and onboarding details.</p>
+                </div>
+                
+                <div th:case="'UNDER_REVIEW'">
+                    <p>🔍 Your application is currently under review by our hiring team.</p>
+                    <p>We will notify you once there is an update. This process typically takes 5-7 business days.</p>
+                </div>
+                
+                <div th:case="'REJECTED'">
+                    <p>We regret to inform you that your application has not been selected at this time.</p>
+                    <p>We received many qualified applications and had to make a difficult decision.</p>
+                    <p>We encourage you to apply for future openings that match your skills.</p>
+                </div>
+                
+                <div th:case="*">
+                    <p>Your application status has been updated. Our team will keep you informed throughout the process.</p>
+                </div>
+            </div>
+            
+            <p>If you have any questions, please contact us at <strong>careers@macs.com</strong>.</p>
+            
+            <p>Thank you for your interest in joining the MAC's family.</p>
+            
+            <p>Best regards,<br>
+            <strong>MAC's HR Team</strong></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 MAC's Franchise. All rights reserved.</p>
+            <p>This is an automated message, please do not reply.</p>
+        </div>
+    </div>
+</body>
+</html>
