@@ -74,7 +74,15 @@ public class SecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+		
+		configuration.setAllowedOrigins(Arrays.asList(
+		        "https://franchicore.vercel.app",
+		        "https://franchi-core.vercel.app",
+		        "http://localhost:5173",
+		        "http://localhost:3000"
+		    ));
+		
+		
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
 		configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With"));
 		configuration.setExposedHeaders(List.of("Authorization"));
