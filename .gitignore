@@ -32,7 +32,8 @@ dist-ssr
 # ===== BACKEND IGNORES =====
 # CRITICAL SECURITY - Database and Email credentials
 application.properties
-*.properties
+application-local.properties
+application-dev.properties
 
 # Compiled files
 *.class
