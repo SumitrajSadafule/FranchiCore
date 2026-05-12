@@ -28,5 +28,6 @@ EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
   CMD wget --quiet --tries=1 --spider http://localhost:8080/api/health/check || exit 1
 
-# Run the application
-ENTRYPOINT ["sh", "-c", "java -jar -Dserver.port=${PORT:-8080} -Dspring.profiles.active=prod app.jar"]
+
+# Simplified Dockerfile - Replace the ENTRYPOINT line
+ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT:-8080}", "-Dserver.address=0.0.0.0", "app.jar"]
